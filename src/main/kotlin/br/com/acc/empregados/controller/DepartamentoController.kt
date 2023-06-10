@@ -23,9 +23,9 @@ class DepartamentoController(val service: DepartamentoService) {
         val deptoUpdate = service.update(id, departamento)
 
         return if(deptoUpdate.deptno == null) {
-            ResponseEntity("não foi encontrado o id informado", HttpStatus.NOT_FOUND)
+            ResponseEntity("não foi encontrado o id: $id", HttpStatus.NOT_FOUND)
         } else {
-            ResponseEntity("update feito", HttpStatus.OK)
+            ResponseEntity("update feito no id: $id", HttpStatus.OK)
         }
     }
 
